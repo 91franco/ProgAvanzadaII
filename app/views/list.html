@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="persona in personas">
+    <tr ng-repeat="persona in personas | limitTo:15:5 | filter:{apellido:buscar} | orderBy:'nombre'" track by $index>
       <td>
           {{persona.id}}
       </td>
