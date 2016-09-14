@@ -16,6 +16,8 @@ angular
   	function enviar(){
   		Data.cargar($scope.user)
   		console.log(Data.listado())
+  		$scope.user=null;
+  		$scope.user={};
   	}
   	// Data.cargar($scope.form)
 

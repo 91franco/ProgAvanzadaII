@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr class="slide" ng-repeat="persona in personas | limitTo:15:aPartir | filter:{apellido:buscar} | orderBy:'id'" track by $index>
+    <tr class="slide" ng-repeat="persona in listado | limitTo:15:aPartir | filter:{apellido:buscar} | orderBy:'id'" track by $index>
       <td>
           {{persona.id}}
       </td>
