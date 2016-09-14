@@ -1,0 +1,18 @@
+https://www.mockaroo.com/ > para generar datos
+http://www.mocky.io/ > Levanta un webService para consultar
+
+
+
+
+De esta manera se inicia angular:
+
+config:
+Constant
+Provider
+-------
+
+Run:
+Factory
+Service
+Value
+-----
