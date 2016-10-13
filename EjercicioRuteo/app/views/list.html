@@ -1,0 +1,49 @@
+<div ng-controller="ListadoCtrl">
+  <input type="text" ng-model="buscar" class="form-control" >
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>email</th>
+        <th>gender</th>
+        <th>sexo</th>
+        <th>longitude</th>
+        <th>latitude</th>
+        <th>amigos</th>
+        <th>borrar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="slide" ng-repeat="persona in personas |filtroArray:35 track by $index ">
+        <td>
+          {{$index+1}}
+        </td>
+        <td>
+          {{persona.name | uppercase }}
+        </td>
+        <td>
+          {{persona.email | miFiltro}}
+        </td>
+        <td>
+          {{persona.gender | sexoEspanol}}
+        </td>
+         <td>
+          {{persona.longitude | currency }}
+        </td>
+        <td>
+          {{persona.latitude | date:'yyyy-MM-dd' }}
+        </td>
+         <td>
+          {{persona.friends | filtroAmigos  }}
+        </td>
+        <td>
+          <button type="submit" class="btn btn-success" ng-click="borrar(persona)">
+            Borrar</button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

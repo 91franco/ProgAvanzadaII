@@ -1,0 +1,42 @@
+
+<div class="container" ng-controller="CargaCtrl">
+<div class="row">
+
+<div class="col-sm-6">
+    <!-- FORM ============ -->
+
+    <form name="userForm" ng-submit="cargar()" novalidate>
+
+        <!-- USERNAME -->
+        <div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
+            <label>User Name</label>
+            <input type="text" name="username" class="form-control" ng-model="user.username" ng-minlength="3" ng-maxlength="8">
+            <p ng-show="userForm.username.$error.minlength" class="help-block">Usuario es requerido.</p>
+            <p ng-show="userForm.username.$error.maxlength" class="help-block">Usuario es muy largo.</p>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+            <label>Email</label>
+            <input type="email" name="email" class="form-control" ng-model="user.email">
+            <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Ingrese un mail valido.</p>
+        </div>
+
+        <!-- SEXO -->
+        <div class="form-group" ng-class="{ 'has-error' : userForm.sexo.$invalid && !userForm.sexo.$pristine }">
+            <label>Sexo</label>
+            <input type="text" name="sexo" class="form-control" ng-model="user.sexo" required>
+            <p ng-show="userForm.sexo.$invalid && !userForm.sexo.$pristine" class="help-block">El sexo es requerido</p>
+        </div>
+
+
+
+
+
+        <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Submit</button>
+
+    </form>
+  </div>
+
+</div>
+</div>
