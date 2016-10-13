@@ -1,7 +1,37 @@
 angular
   .module('miApp', ['ngAnimate','ui.router'])
   .config(function($stateProvider,$urlRouterProvider){
-    
+     $stateProvider
+        .state('home',{
+          url:'/home',
+          controller: 'MainCtrl',
+          templateUrl:'views/list.html'
+
+          views:{
+            principal:{
+              controller: 'MainCtrl',
+              templateUrl:'views/list.html'
+            },
+            secundaria:{
+              controller: 'CargaCtrl',
+              templateUrl:'views/form.html'
+            }
+          }
+    })
+      $stateProvider
+        .state('form',{
+          url:'/form',
+          controller: 'MainCtrl',
+          templateUrl:'views/form.html'
+    })
+      $stateProvider
+        .state('calculos.cargar',{
+          abstract: true,
+          url:'/cargar',
+          controller: 'MainCtrl',
+          templateUrl:'views/calculos.html'
+    })
+      $urlRouterProvider.otherwise('home');
   })
 
   .filter('miFiltro',function(){
