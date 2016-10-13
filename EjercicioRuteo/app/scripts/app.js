@@ -1,7 +1,7 @@
 angular
   .module('miApp', ['ngAnimate','ui.router'])
-  .config(function($stateProvider,$urIRouterProvider){
-
+  .config(function($stateProvider,$urlRouterProvider){
+    
   })
 
   .filter('miFiltro',function(){
